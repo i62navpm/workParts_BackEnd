@@ -18,7 +18,7 @@ mongoose.Promise = global.Promise;
 
 mongoose.connect('mongodb://mongo/api');
 
-app.use("/workers", require("./routes/worker.routes.js"));
+app.use("/api", require("./app/routes/index"));
 
 app.all('/', function (req, res) {
   res.send('Work Parts Project\n');
