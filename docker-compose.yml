@@ -6,6 +6,7 @@ services:
       - ./:/usr/src/app
     ports:
       - "3000:8080"
+      - "5858:5858"
     links:
       - mongo
   mongo:

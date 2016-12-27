@@ -13,6 +13,7 @@ RUN npm install
 COPY . /usr/src/app
 
 ENV PORT 8080
-EXPOSE  $PORT
+EXPOSE $PORT
+EXPOSE 5858
 
 CMD [ "npm", "start" ]

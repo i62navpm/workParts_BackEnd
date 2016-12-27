@@ -5,7 +5,7 @@
   "author": "Manuel Navarro Perez",
   "license": "MIT",
   "scripts": {
-    "start": "./node_modules/nodemon/bin/nodemon.js"
+    "start": "./node_modules/nodemon/bin/nodemon.js --debug=5858"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
