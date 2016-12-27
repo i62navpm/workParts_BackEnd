@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-const worker = require('./worker/worker')
+const worker = require('./worker/worker.model');
 
 module.exports = {
   worker: worker 

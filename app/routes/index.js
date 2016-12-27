@@ -1,8 +1,9 @@
-'use strict'
+'use strict';
 
 const router = require('express').Router();
-const worker = require('./worker/index')
+const worker = require('./worker');
 
-router.use('/worker', worker)
+router.get('/', (req, res) => res.send('API works Parts working\n'));
+router.use('/worker', worker);
 
-module.exports = router
+module.exports = router;
