@@ -2,7 +2,7 @@
 
 const passport = require('passport');
 const Strategy = require('passport-http-bearer').Strategy;
-const User     = require('./../../models').user;
+const User     = require('./../../models').mongoSchema.user;
 const secret   = require('./../auth');
 const jwt      = require('jsonwebtoken');
 

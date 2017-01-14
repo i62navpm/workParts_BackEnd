@@ -2,7 +2,7 @@
 
 const passport = require('passport');
 const Strategy = require('passport-local').Strategy;
-const User     = require('./../../models').user;
+const User     = require('./../../models').mongoSchema.user;
 
 passport.use(new Strategy(
   function(username, password, cb) {

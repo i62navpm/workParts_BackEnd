@@ -1,11 +1,11 @@
 'use strict';
 
 function getWorker(req, res) {
-  const Worker = require('../../models').worker;
+  const Worker = require('../../models').mongoSchema.worker;
 
   let worker = new Worker({
     name: 'Manuel',
-    age: 29 
+    age: 30 
   });
 
   worker.save().then(
