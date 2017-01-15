@@ -5,7 +5,7 @@ const passport    = require('passport');
 const mongoose    = require('mongoose');
 const bodyParser  = require('body-parser');
 const morgan      = require('morgan');
-const graffiti    = require('@risingstack/graffiti');
+const graphqlHTTP = require('express-graphql');
 const graphSchema = require('./app/models').graphSchema;
 
 require('./app/config/authStrategies/local.strategy');
@@ -25,9 +25,8 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://mongo/api');
 
 app.use("/api", passport.authenticate('bearer', { session: false }), require("./app/routes"));
+app.use('/graphql', passport.authenticate('bearer', { session: false }), graphqlHTTP({schema: graphSchema, graphiql: true}));
 app.use("/auth", require("./app/services"));
-app.use('/graphql', passport.authenticate('bearer', { session: false }), (req, res, next) => next());
-app.use(graffiti.express({schema: graphSchema}));
 
 app.all('/', function (req, res) {
   res.send('Work Parts Project\n');
